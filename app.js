@@ -40,4 +40,4 @@ playMatch();
 
 //start the game funtion
 
-game();
+game();}

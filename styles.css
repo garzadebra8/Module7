@@ -73,4 +73,23 @@ font-family: sans-serif;
 
 .hands, .options{
     display:flex;
-    ju
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+img{
+    width: 125px;
+    height: 125px;
+}
+
+div.fadeOut{
+    opacity: 0;
+    pointer-events:none;
+}
+
+div.fadeIn{
+
+    opacity:1;
+    pointer-events: all;
+}

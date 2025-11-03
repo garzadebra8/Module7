@@ -16,21 +16,69 @@ playBtn.addEventListener('click', ()=>{
 };
 
 //Play match
-const playMatch = ()=>{
+const playMatch = ()=>{}
     const options = document.querySelectorAll('.options button');
     const playerHand = document.querySelector('.player-hand');
     const computerHand = document.querySelector('.computer-hand');
    
     //computer options
     const computerOptions = ['rock', 'paper', 'scissors'];
-    const computerNumber =Math.floor(Math.random()*3);
+    
     options.forEach(option=>{
         options.addEventListener("click", function( ){
+            //computer choice
+            const computerNumber = Math.floor(Math.random() * 3);
+            const computerChoice = computerOptions[computerNumber];
+
+            //update images
+            playerHand.src=`./assets/${this.textContent}.png`;
+            computerHand.src=`./assets/${computerChoice}.png`;
+           
     });
 });
+};
+    const compareHands = (playerChoice, computerChoice)=>{
+        //Update text
+        const winner = document.querySelector('.winner');
+        
+        //Checking for a tie
+        if(playerChoice === computerChoice){
+            winner.textContent='It is a tie';
+            return;
+        }
+    }
 
-    computerOptions(computerNumber);
+    if(playerChoice === 'rock'){
+        if(computerChoice === 'scissors'){
+            winner.textContent = 'Player Wins';
+            return;
+        }else{
+            winner.textContent = 'Computer Wins';
+            return;
+        }
+        
 
+        if(playerChoice === 'paper'){
+        if(computerChoice === 'rock'){
+            winner.textContent = 'Player Wins';
+            return;
+        }else{
+            winner.textContent = 'Computer Wins';
+            return;
+        }
+
+        if(playerChoice === 'scissors'){
+        if(computerChoice === 'paper'){
+            winner.textContent = 'Player Wins';
+            return;
+        }else{
+            winner.textContent = 'Computer Wins';
+            return;
+        }   
+
+        
+    }
+        }
 
 //Is call all to inner functions
 
@@ -40,4 +88,4 @@ playMatch();
 
 //start the game funtion
 
-game();}
+game();
